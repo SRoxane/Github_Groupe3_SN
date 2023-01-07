@@ -1,0 +1,265 @@
+*{
+    padding: 0;
+    margin: 0;
+    text-decoration: none;
+    list-style: none;
+    box-sizing: border-box;
+  }
+  body{
+    font-family: montserrat;
+    background-image: url(img/jamorantblue.jpg);
+    background-repeat: no-repeat;
+    background-size: cover;
+    width: 100%;
+    height: 500px;
+  }
+  
+  /* Barre de navigation de food wars */
+  
+  nav{
+    
+    background: linear-gradient(rgb(230, 138, 52), rgb(97, 75, 27));
+    height: 80px;
+    width: 100%;
+  }
+  label.logox{
+    color: white;
+    font-size: 35px;
+    line-height: 80px;
+    padding: 0 100px;
+    font-weight: bold;
+  }
+  nav ul{
+    float: right;
+    margin-right: 20px;
+  }
+  nav ul li{
+    display: inline-block;
+    line-height: 80px;
+    margin: 0 5px;
+  }
+  nav ul li a{
+    color: white;
+    font-size: 17px;
+    padding: 7px 13px;
+    border-radius: 3px;
+    text-transform: uppercase;
+  }
+  a.activex,a:hover{
+    background: rgb(51, 54, 84);
+    transition: .5s;
+  }
+  .checkbtn{
+    font-size: 30px;
+    color: white;
+    float: right;
+    line-height: 80px;
+    margin-right: 40px;
+    cursor: pointer;
+    display: none;
+  }
+  #check{
+    display: none;
+  }
+  @media (max-width: 952px){
+    label.logox{
+      font-size: 30px;
+      padding-left: 50px;
+    }
+    nav ul li a{
+      font-size: 16px;
+    }
+  }
+  @media (max-width: 858px){
+    .checkbtn{
+      display: block;
+    }
+    ul{
+      position: fixed;
+      width: 100%;
+      height: 100vh;
+      background: #2c3e50;
+      top: 80px;
+      left: -100%;
+      text-align: center;
+      transition: all .5s;
+    }
+    nav ul li{
+      display: block;
+      margin: 50px 0;
+      line-height: 30px;
+    }
+    nav ul li a{
+      font-size: 20px;
+    }
+    a:hover,a.activex{
+      background: none;
+      color: rgb(51, 54, 84);
+    }
+    #check:checked ~ ul{
+      left: 0;
+    }
+  }
+  
+  /*Le bouton se connecter*/
+  .wrapper{
+    position: absolute;
+    top: 80%;
+    left: 74%;
+    transform: translate(-50%, -50%);
+    width: fit-content;
+    height:auto;
+  }
+  button{
+    width:200px;
+    height:70px;
+    background: linear-gradient(to left top, #c32c71 50%, #b33771 50%);
+    border-style: none;
+    color:#fff;
+    font-size: 23px;
+    letter-spacing: 3px;
+    font-family: 'Lato';
+    font-weight: 600;
+    outline: none;
+    cursor: pointer;
+    position: relative;
+    padding: 0px;
+    overflow: hidden;
+    transition: all .5s;
+    box-shadow: 0px 1px 2px rgba(0,0,0,.2);
+  }
+  button span{
+    position: absolute;
+    display: block;
+  }
+  button span:nth-child(1){
+    height: 3px;
+    width:200px;
+    top:0px;
+    left:-200px;
+    background: linear-gradient(to right, rgba(0,0,0,0), rgb(51, 54, 84));
+    border-top-right-radius: 1px;
+    border-bottom-right-radius: 1px;
+    animation: span1 2s linear infinite;
+    animation-delay: 1s;
+  }
+  
+  @keyframes span1{
+    0%{
+        left:-200px
+    }
+    100%{
+        left:200px;
+    }
+  }
+  button span:nth-child(2){
+    height: 70px;
+    width: 3px;
+    top:-70px;
+    right:0px;
+    background: linear-gradient(to bottom, rgba(0,0,0,0), rgb(51, 54, 84));
+    border-bottom-left-radius: 1px;
+    border-bottom-right-radius: 1px;
+    animation: span2 2s linear infinite;
+    animation-delay: 2s;
+  }
+  @keyframes span2{
+    0%{
+        top:-70px;
+    }
+    100%{
+        top:70px;
+    }
+  }
+  button span:nth-child(3){
+    height:3px;
+    width:200px;
+    right:-200px;
+    bottom: 0px;
+    background: linear-gradient(to left, rgba(0,0,0,0), rgb(51, 54, 84));
+    border-top-left-radius: 1px;
+    border-bottom-left-radius: 1px;
+    animation: span3 2s linear infinite;
+    animation-delay: 3s;
+  }
+  @keyframes span3{
+    0%{
+        right:-200px;
+    }
+    100%{
+        right: 200px;
+    }
+  }
+  
+  button span:nth-child(4){
+    height:70px;
+    width:3px;
+    bottom:-70px;
+    left:0px;
+    background: linear-gradient(to top, rgba(0,0,0,0), rgb(51, 54, 84));
+    border-top-right-radius: 1px;
+    border-top-left-radius: 1px;
+    animation: span4 2s linear infinite;
+    animation-delay: 4s;
+  }
+  @keyframes span4{
+    0%{
+        bottom: -70px;
+    }
+    100%{
+        bottom:70px;
+    }
+  }
+  
+  button:hover{
+    transition: all .5s;
+    transform: rotate(-3deg) scale(1.1);
+    box-shadow: 0px 3px 5px rgba(0,0,0,.4);
+  }
+  button:hover span{
+    animation-play-state: paused;
+  }
+  
+  /* speech */
+  h3{
+    font-size: 160%;
+    color: aliceblue;
+    position: absolute;
+    top: 50%;
+    left: 79%;
+    transform: translate(-50%, -50%);
+    width: 600PX;
+    height: 50px;
+  
+  }
+  h4{
+    font-size: 130%;
+    color: aliceblue;
+    position: absolute;
+    top: 60%;
+    left: 85%;
+    transform: translate(-50%, -50%);
+    width: 500PX;
+    height: 50px;
+    
+  }
+  
+  .footer{
+    border: 0px solid rgb(246, 198, 216);
+    width:auto;
+    height: 30px;
+    /* background: linear-gradient(rgb(51, 54, 84), rgb(203, 54, 86)); */
+    color: white;
+    text-align: center;
+    padding-top: 500px;
+    font-size: large;
+  }
+  /* .speech{
+    color: aliceblue;
+    position: absolute;
+    top: 50%;
+    left:80%;
+    transform: translate(-50%, -50%);
+    width: 500PX;
+    height: 50px;
+  } */
